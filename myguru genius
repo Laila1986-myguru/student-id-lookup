@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student ID Lookup</title>
+    <script>
+        function searchID() {
+            let name = document.getElementById("studentName").value.trim().toUpperCase();
+            let studentData = {
+                "LAILA ZAINAL": "LS001",
+                "MAILE BALISACAN": "LS002",
+                "NURIZATUL ALI": "LS003",
+                "EMELDA ALI": "LS004",
+                            };
+            
+            let serialNumber = studentData[name];
+            if (serialNumber) {
+                document.getElementById("result").innerHTML = 
+                    `ID Found: <b>${serialNumber}</b><br>
+                    <a href="https://drive.google.com/drive/folders/1IuLbQVWtj8feY9ELkc9TIL5k9TJUY9lh/${serialNumber}.jpg" download>Download Your ID</a>`;
+            } else {
+                document.getElementById("result").innerHTML = "Student not found. Please check the spelling.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter Your Name to Download ID</h2>
+    <input type="text" id="studentName" placeholder="Enter your full name">
+    <button onclick="searchID()">Find My ID</button>
+    <p id="result"></p>
+</body>
+</html>
