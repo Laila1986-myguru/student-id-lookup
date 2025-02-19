@@ -5,10 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student ID Download</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        input { padding: 10px; width: 250px; margin-top: 20px; }
-        button { padding: 10px; margin-top: 10px; cursor: pointer; }
-        img { margin-top: 20px; max-width: 100%; height: auto; display: none; }
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background: url('https://drive.google.com/uc?export=view&id=1OgSUD61HaYJ90eoKzwO529G2XCFwtKhj') no-repeat center center fixed;  
+            background-size: cover;
+            color: white; /* Adjust text color for contrast */
+        }
+        input, button { 
+            padding: 10px; 
+            width: 250px; 
+            margin-top: 20px; 
+            border-radius: 5px;
+            border: none;
+        }
+        button { 
+            cursor: pointer; 
+            background-color: #28a745; 
+            color: white; 
+        }
+        img { 
+            margin-top: 20px; 
+            max-width: 100%; 
+            height: auto; 
+            display: none; 
+            border-radius: 10px; 
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        }
+        a {
+            display: none;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -18,25 +51,26 @@
     <br>
     <img id="studentImage" src="" alt="Student ID">
     <br>
-    <a id="downloadLink" href="#" download style="display:none;">Download ID</a>
+    <a id="downloadLink" href="#" download>Download ID</a>
 
     <script>
         const students = {
-            "LAILA ZAINAL": "https://drive.google.com/uc?export=view&id=1x12tlUmBfH-J3p-EW4pZJtbKVCO6dw1X",
-            "MAILE BALISACAN": "https://drive.google.com/uc?export=view&id=1UaaBeNbRDDu6ERAAXU84G0jbn8Ip5cr5",
-            "NURIZATUL ALI": "https://drive.google.com/uc?export=view&id=15kdPJZDekHW9II9nYeXRXlhuPKJvt6ul",
-            "EMELDA ALI": "https://drive.google.com/uc?export=view&id=16AOeubLrR0kuqPSRns9sbYP77K3oKhgq"
+            "LAILA ZAINAL": "1x12tlUmBfH-J3p-EW4pZJtbKVCO6dw1X",
+            "MAILE BALISACAN": "1UaaBeNbRDDu6ERAAXU84G0jbn8Ip5cr5",
+            "NURIZATUL ALI": "15kdPJZDekHW9II9nYeXRXlhuPKJvt6ul",
+            "EMELDA ALI": "16AOeubLrR0kuqPSRns9sbYP77K3oKhgq"
         };
 
         function searchID() {
             let name = document.getElementById("studentName").value.toUpperCase().trim();
-            let imageUrl = students[name];
-            if (imageUrl) {
+            let fileId = students[name];
+
+            if (fileId) {
+                let imageUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
                 document.getElementById("studentImage").src = imageUrl;
                 document.getElementById("studentImage").style.display = "block";
                 document.getElementById("downloadLink").href = imageUrl;
                 document.getElementById("downloadLink").style.display = "inline-block";
-                document.getElementById("downloadLink").innerText = "Download ID";
             } else {
                 alert("Student not found!");
             }
@@ -44,4 +78,3 @@
     </script>
 </body>
 </html>
-
