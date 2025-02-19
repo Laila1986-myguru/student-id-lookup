@@ -22,17 +22,16 @@
 
     <script>
         const students = {
-            "LAILA ZAINAL": "LS001",
-            "MAILE BALISACAN": "LS002",
-            "NURIZATUL ALI": "LS003",
-            "EMELDA ALI": "LS004"
+            "LAILA ZAINAL": "https://drive.google.com/uc?export=view&id=1x12tlUmBfH-J3p-EW4pZJtbKVCO6dw1X",
+            "MAILE BALISACAN": "https://drive.google.com/uc?export=view&id=1UaaBeNbRDDu6ERAAXU84G0jbn8Ip5cr5",
+            "NURIZATUL ALI": "https://drive.google.com/uc?export=view&id=15kdPJZDekHW9II9nYeXRXlhuPKJvt6ul",
+            "EMELDA ALI": "https://drive.google.com/uc?export=view&id=16AOeubLrR0kuqPSRns9sbYP77K3oKhgq"
         };
 
         function searchID() {
             let name = document.getElementById("studentName").value.toUpperCase().trim();
-            let id = students[name];
-            if (id) {
-                let imageUrl = `https://drive.google.com/uc?export=view&id=YOUR_FILE_ID_${id}`;
+            let imageUrl = students[name];
+            if (imageUrl) {
                 document.getElementById("studentImage").src = imageUrl;
                 document.getElementById("studentImage").style.display = "block";
                 document.getElementById("downloadLink").href = imageUrl;
@@ -45,3 +44,4 @@
     </script>
 </body>
 </html>
+
