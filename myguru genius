@@ -10,6 +10,7 @@
                 "MAILE BALISACAN": "LS002",
                 "NURIZATUL ALI": "LS003",
                 "EMELDA ALI": "LS004",
+                "SHAIRIN SHARIF": "LS005",
                             };
             
             let serialNumber = studentData[name];
